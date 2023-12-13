@@ -1,0 +1,17 @@
+C:\git\AarimTeste\bin\Debug\net8.0\AarimTeste.exe
+C:\git\AarimTeste\bin\Debug\net8.0\AarimTeste.deps.json
+C:\git\AarimTeste\bin\Debug\net8.0\AarimTeste.runtimeconfig.json
+C:\git\AarimTeste\bin\Debug\net8.0\AarimTeste.dll
+C:\git\AarimTeste\bin\Debug\net8.0\AarimTeste.pdb
+C:\git\AarimTeste\obj\Debug\net8.0\AarimTeste.GeneratedMSBuildEditorConfig.editorconfig
+C:\git\AarimTeste\obj\Debug\net8.0\AarimTeste.AssemblyInfoInputs.cache
+C:\git\AarimTeste\obj\Debug\net8.0\AarimTeste.AssemblyInfo.cs
+C:\git\AarimTeste\obj\Debug\net8.0\AarimTeste.csproj.CoreCompileInputs.cache
+C:\git\AarimTeste\obj\Debug\net8.0\AarimTeste.dll
+C:\git\AarimTeste\obj\Debug\net8.0\refint\AarimTeste.dll
+C:\git\AarimTeste\obj\Debug\net8.0\AarimTeste.pdb
+C:\git\AarimTeste\obj\Debug\net8.0\AarimTeste.genruntimeconfig.cache
+C:\git\AarimTeste\obj\Debug\net8.0\ref\AarimTeste.dll
+C:\git\AarimTeste\obj\Debug\net8.0\AarimTeste.csproj.AssemblyReference.cache
+C:\git\AarimTeste\bin\Debug\net8.0\Newtonsoft.Json.dll
+C:\git\AarimTeste\obj\Debug\net8.0\AarimTeste.csproj.CopyComplete
