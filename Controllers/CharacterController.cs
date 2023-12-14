@@ -16,36 +16,45 @@ namespace AARIMTESTE.Controllers
 
         public async Task FilterAndDisplayCharactersAsync()
         {
-            string apiUrl = "https://rickandmortyapi.com/api/character";
-            string content = await _apiService.GetCharacterDataAsync(apiUrl);
+            bool moreCharactersAvailable = true;
+            int characterNumber = 1;
+            List<Character> filteredCharacters = new List<Character>();
 
-            if (!string.IsNullOrEmpty(content))
+            while (moreCharactersAvailable)
             {
-                var characterResponse = JsonConvert.DeserializeObject<CharacterResponse>(content);
+                string apiUrl = $"https://rickandmortyapi.com/api/character/{characterNumber}";
+                string content = await _apiService.GetCharacterDataAsync(apiUrl);
 
-                if (characterResponse != null && characterResponse.Results != null)
+                if (!string.IsNullOrEmpty(content))
                 {
-                    List<Character> filteredCharacters = new List<Character>();
-
-                    foreach (var character in characterResponse.Results)
+                    var character = JsonConvert.DeserializeObject<Character>(content);
+                    if (character != null)
                     {
-                        if (character?.Status?.ToUpper() == "unknown".ToUpper() && character?.Species?.ToUpper() == "alien".ToUpper() && character?.Episode?.Count > 1)
+                        if (character?.Status?.ToUpper() == "UNKNOWN" && character?.Species?.ToUpper() == "ALIEN" && character?.Episode?.Count > 1)
                         {
                             filteredCharacters.Add(character);
                         }
-                    }
-
-                    if (filteredCharacters.Count == 0)
-                    {
-                        Console.WriteLine("Não foi encontrado nenhum personagem com as condições solicitadas.");
+                        characterNumber++;
                     }
                     else
                     {
-                        foreach (var character in filteredCharacters)
-                        {
-                            Console.WriteLine($"Name: {character?.Name}, Status: {character?.Status}, Species: {character?.Species}, Episode Count: {character?.Episode?.Count}");
-                        }
+                        moreCharactersAvailable = false;
                     }
+                }
+                else
+                {
+                    moreCharactersAvailable = false;
+                }
+            }
+            if (filteredCharacters.Count == 0)
+            {
+                Console.WriteLine("Não foi encontrado nenhum personagem.");
+            }
+            else
+            {
+                foreach (var character in filteredCharacters)
+                {
+                    Console.WriteLine($"Name: {character?.Name}, Status: {character?.Status}, Species: {character?.Species}, Episode Count: {character?.Episode?.Count}");
                 }
             }
         }
